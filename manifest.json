@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Snowflake SSO Tab Closer",
+  "version": "1.0.0",
+  "description": "Closes the leftover \"Your identity was confirmed and propagated to Snowflake\" tab after externalbrowser (Okta SSO) login.",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/*", "http://127.0.0.1/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
